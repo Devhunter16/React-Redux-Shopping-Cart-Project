@@ -4,7 +4,9 @@ import Products from './components/Shop/Products';
 import { useSelector } from 'react-redux';
 
 function App() {
-  const cartIsVisible = useSelector(state => state.ui.toggle);
+  // Here useSelector is passed  a function which recieves the current state and returns
+  // the data which we want to use and track in this component. 
+  const cartIsVisible = useSelector(state => state.ui.cartIsVisible);
 
   return (
     <Layout>
