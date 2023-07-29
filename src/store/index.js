@@ -1,14 +1,18 @@
 // Importing the configureStore function from redux toolkit
 import { configureStore } from '@reduxjs/toolkit';
 
+// Importing the slices of our data store
+import uiSlice from './ui-slice';
+
 const store = configureStore({
     reducer: {
-        // Reducers that we import from our state slices will go here.
+        ui: uiSlice.reducer
     }
 });
 
 export default store;
 
+/*
 const Subscriber = () => {
     const latestState = store.getState();
     console.log(latestState);
@@ -18,3 +22,4 @@ const Subscriber = () => {
 // function should be executed whenever our state changes. We do this by passing our 
 // subscriber function to the .subscribe() method on our store.
 store.subscribe(Subscriber);
+*/
