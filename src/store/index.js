@@ -3,10 +3,12 @@ import { configureStore } from '@reduxjs/toolkit';
 
 // Importing the slices of our data store
 import uiSlice from './ui-slice';
+import cartSlice from './cart-slice';
 
 const store = configureStore({
     reducer: {
-        ui: uiSlice.reducer
+        ui: uiSlice.reducer,
+        cart: cartSlice.reducer
     }
 });
 
