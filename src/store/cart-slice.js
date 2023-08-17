@@ -19,6 +19,9 @@ const cartSlice = createSlice({
     initialState: initialCartState,
     reducers: {
         addItemToCart(state, action) {
+            // Payload is whatever value we're going to be passing to this function when we
+            // use it in another file. "Payload" is from redux-toolkit, it is essentially
+            // any extra data you added to the action.
             const newItem = action.payload;
             // We're checking whether or not the item exists within the "items" array already
             // and if it does we increase the quantity of that existing item rather than
