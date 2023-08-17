@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 // Defining our starting UI state
-const initialUIState = { 
-    cartIsVisible: false
+const initialUIState = {
+    cartIsVisible: false,
+    notification: null
 };
 
 // createSlice prepares a slice of our global state. It takes an object as an argument.
@@ -19,6 +20,13 @@ const uiSlice = createSlice({
     reducers: {
         toggle(state) {
             state.cartIsVisible = !state.cartIsVisible;
+        },
+        showNotification(state, action) {
+            state.notification = {
+                status: action.payload.status,
+                title: action.payload.title,
+                message: action.payload.message
+            }
         }
     }
 });
